@@ -1,12 +1,12 @@
 import React from 'react'
-import { Route, Link } from 'react-router-dom'
+import { Route } from 'react-router-dom'
 import Nav from '../Components/Nav/Nav'
 import Home from '../Components/Home/Home'
 import About from '../Components/About/About'
 import Projects from '../Components/Projects/Projects'
 import Content from '../Components/Content/Content'
 import Contact from '../Components/Contact/Contact'
-import './App.scss'
+import styled from 'styled-components'
 
 const App = () => {
   return (
