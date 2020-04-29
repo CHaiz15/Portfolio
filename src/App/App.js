@@ -1,5 +1,6 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
+import Nav from '../Components/Nav/Nav'
 import Home from '../Components/Home/Home'
 import About from '../Components/About/About'
 import Projects from '../Components/Projects/Projects'
@@ -10,13 +11,23 @@ import './App.scss'
 const App = () => {
   return (
     <main className="App">
-      <nav className='nav-bar'>
-      </nav>
       <Route exact path='/' component={Home} />
-      <Route exact path='/about' component={About} />
-      <Route exact path='/projects' component={Projects} />
-      <Route exact path='/content' component={Content} />
-      <Route exact path='/contact' component={Contact} />
+      <Route exact path='/about' component={About}>
+        <Nav />
+        <About />
+      </Route>
+      <Route exact path='/projects' component={Projects}>
+        <Nav />
+        <Projects />
+      </Route>
+      <Route exact path='/content' component={Content}>
+        <Nav />
+        <Content />
+      </Route>
+      <Route exact path='/contact' component={Contact}>
+        <Nav />
+        <Contact />
+      </Route>
     </main>
   );
 }
