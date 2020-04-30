@@ -3,10 +3,15 @@ import styled from 'styled-components'
 
 const About = () => {
   return (
-    <>
-      <h1>About</h1>
-    </>
+    <ContentContainer>
+    </ContentContainer>
   )
 }
+
+const ContentContainer = styled.main`
+  background-color: rgb(70, 170, 239);
+  height: 100vh;
+  width: 100%;
+`
 
 export default About

@@ -1,6 +1,6 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
-import Nav from '../Components/Nav/Nav'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Intro from '../Components/Intro/Intro'
 import Home from '../Components/Home/Home'
 import About from '../Components/About/About'
 import Projects from '../Components/Projects/Projects'
@@ -8,28 +8,40 @@ import Content from '../Components/Content/Content'
 import Contact from '../Components/Contact/Contact'
 import styled from 'styled-components'
 
+
 const App = () => {
+  
   return (
-    <main className="App">
-      <Route exact path='/' component={Home} />
-      <Route exact path='/about' component={About}>
-        <Nav />
-        <About />
-      </Route>
-      <Route exact path='/projects' component={Projects}>
-        <Nav />
-        <Projects />
-      </Route>
-      <Route exact path='/content' component={Content}>
-        <Nav />
-        <Content />
-      </Route>
-      <Route exact path='/contact' component={Contact}>
-        <Nav />
-        <Contact />
-      </Route>
-    </main>
+    <Router>
+      <Main>
+        <Switch>
+          <Route exact path='/' component={Intro} />
+          <Route exact path='/home' component={Home} />
+          <Route exact path='/about'>
+            <Home/>
+            <About/>
+          </Route>
+          <Route exact path='/projects'>
+            <Home/>
+            <Projects/>
+          </Route>
+          <Route exact path='/content'>
+            <Home/>
+            <Content/>
+          </Route>
+          <Route exact path='/contact' component={Contact}>
+            <Home/>
+            <Contact/>
+          </Route>
+        </Switch>
+      </Main>
+    </Router>
   );
 }
+
+const Main = styled.main`
+  height: 100%;
+  width: 100%;
+`
 
 export default App
