@@ -9,7 +9,7 @@ const Contact = () => {
 }
 
 const ContentContainer = styled.main`
-  background-color: rgb(255, 255, 245);
+  background-color: rgb(92,213,4);
   height: 100vh;
   width: 100%;
 `
