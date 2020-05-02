@@ -62,23 +62,18 @@ const Logo = styled.img`
 `
 const LogoBox = styled.div`
   animation: ${slideIn} 3s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-  ${props => props.homeStatus && `animation: null`}
 `
 const OptionBox = styled.div`
   animation: ${slideIn} 5s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-  ${props => props.homeStatus && `animation: null`}
 `
 const OptionBox1 = styled.div`
   animation: ${slideIn} 4s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-  ${props => props.homeStatus && `animation: null`}
 `
 const OptionBox2 = styled.div`
   animation: ${slideIn} 4s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-  ${props => props.homeStatus && `animation: null`}
 `
 const OptionBox3 = styled.div`
   animation: ${slideIn} 5s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-  ${props => props.homeStatus && `animation: null`}
 `
 const Content = styled.main`
   display: flex;
