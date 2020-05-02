@@ -29,24 +29,16 @@ export const fadeIn = keyframes`
   }
 `
 
-export const animatedText = keyframes`
-  from{width: 0;}
-  to{width: 100%;}
+export const animatedText = (width) => keyframes`
+  0% {width: 0;}
+  100% {
+    width: ${width};
+  }
 `
 
 export const animatedCursor = keyframes`
-  from{border-right-color: rgb(50, 50, 49);}
-  to{border-right-color: transparent;}
-` 
-
-export const animatedText2 = keyframes`
-  from{width: 0;}
-  to{width: 72%;}
-`
-
-export const animatedCursor2 = keyframes`
-  from{border-right-color: rgb(50, 50, 49);}
-  to{border-right-color: transparent;}
+  0% {border-right-color: rgb(50, 50, 49);}
+  100% {border-right-color: transparent;}
 ` 
 
 export const periodExit = keyframes`
