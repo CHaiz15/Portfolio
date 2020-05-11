@@ -1,4 +1,8 @@
-@import './variables.scss';
+$primary-red: rgb(238, 54, 52);
+$primary-blue: rgb(70, 170, 239);
+$primary-yellow: rgb(252, 231, 0);
+$main-white: rgb(255, 255, 245);
+$main-black: rgb(50, 50, 49);
 
 body {
   height: 100%;
@@ -10,6 +14,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 code {
