@@ -1,54 +1,71 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { periodIn, shrink, enlarge, slideUp, slideIn} from '../../KeyFrames'
+import { periodIn, shrink, enlarge, slideUp, slideIn, slideUp2} from '../../KeyFrames'
 import { NavLink } from 'react-router-dom'
 import logo from '../../Assets/white-logo.png'
-import { Link } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 const Home = () => {
-  const [homeStatus, setHomeStatus] = useState(true)
+  const location = useLocation()
+  const [displayStatus, setDisplayStatus] = useState(false)
+  window.addEventListener('scroll', (e) => handleScroll(e), true)
+  const handleScroll = (e) => {
+    if(e.srcElement.scrollTop > 50) {
+      setDisplayStatus(true)
+    } else {
+      setDisplayStatus(false)
+    }
+  }
 
   return (
-    <Content>
-      <HomeSection homeStatus={homeStatus}>
-        <OptionBox>
+    <Content displayStatus={displayStatus}>
+      <HomeSection currentLocation={location.pathname}>
+        <OptionBox duration={5} currentLocation={location.pathname}>
           <Option>
-            <StyledLinkOne to={'/about'} activeStyle={{color: 'rgb(70, 170, 239)'}} onClick={() => setHomeStatus(false)}>
+            <StyledLinkOne to={'/about'} activeStyle={{color: 'rgb(70, 170, 239)'}}>
               About
             </StyledLinkOne>
           </Option>
         </OptionBox>
-        <OptionBox1>
+        <OptionBox duration={4} currentLocation={location.pathname}>
           <Option>
-            <StyledLinkTwo to={'/projects'} activeStyle={{color: 'rgb(238, 54, 52)'}} onClick={() => setHomeStatus(false)}>
+            <StyledLinkTwo to={'/projects'} activeStyle={{color: 'rgb(238, 54, 52)'}}>
               Projects
             </StyledLinkTwo>
           </Option>
-        </OptionBox1>
-        <LogoBox>
-        <Link to='/'>
+        </OptionBox>
+        <OptionBox duration={3} currentLocation={location.pathname}>
+        <StyledLink to='/'>
           <Logo src={logo} />
-        </Link>
-        </LogoBox>
-        <OptionBox2>
+        </StyledLink>
+        </OptionBox>
+        <OptionBox duration={4} currentLocation={location.pathname}>
           <Option>
-            <StyledLinkThree to={'/content'} activeStyle={{color: 'rgb(252, 231, 0)'}} onClick={() => setHomeStatus(false)}>
+            <StyledLinkThree to={'/content'} activeStyle={{color: 'rgb(252, 231, 0)'}}>
               Content
             </StyledLinkThree>
           </Option>  
-        </OptionBox2>
-        <OptionBox3>  
+        </OptionBox>
+        <OptionBox duration={5} currentLocation={location.pathname}>  
           <Option>
-            <StyledLinkFour to={'/contact'} activeStyle={{color: 'rgb(92,213,4)'}} onClick={() => setHomeStatus(false)}>
+            <StyledLinkFour to={'/contact'} activeStyle={{color: 'rgb(92,213,4)'}}>
               Contact
             </StyledLinkFour>
           </Option>
-        </OptionBox3>
+        </OptionBox>
       </HomeSection>
     </Content>
   )
 }
 
+const Content = styled.main` 
+  display: flex;
+  ${props => props.displayStatus && css`animation: ${slideUp2} 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;`}
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+`
 const Logo = styled.img`
   height: 4rem;
   align-self: center;
@@ -60,26 +77,11 @@ const Logo = styled.img`
     box-shadow: 0px 0px 32px 2px rgba(255,255,245,0);
   }
 `
-const LogoBox = styled.div`
-  animation: ${slideIn} 3s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-`
 const OptionBox = styled.div`
-  animation: ${slideIn} 5s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-`
-const OptionBox1 = styled.div`
-  animation: ${slideIn} 4s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-`
-const OptionBox2 = styled.div`
-  animation: ${slideIn} 4s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-`
-const OptionBox3 = styled.div`
-  animation: ${slideIn} 5s cubic-bezier(0.390, 0.575, 0.565, 1.000)
-`
-const Content = styled.main`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
+  animation: ${slideIn} 1s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+  ${props => props.currentLocation === '/home' &&
+    css`animation: ${slideIn} ${props => props.duration + 's'} cubic-bezier(0.390, 0.575, 0.565, 1.000);`
+  }
 `
 const HomeSection = styled.main`
   height: 100vh;
@@ -87,11 +89,10 @@ const HomeSection = styled.main`
   background-color: rgb(50, 50, 49);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   animation: ${periodIn} 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  ${props => props.homeStatus ? 
-    '':
+  ${props => props.currentLocation !== '/home' &&
     css`
     animation: ${slideUp} 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
     border-radius: 0 0 100% 100%/30%;

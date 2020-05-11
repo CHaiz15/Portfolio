@@ -30,12 +30,25 @@ export const fadeIn = keyframes`
 `
 
 export const animatedText = (width) => keyframes`
-  0% {width: 0;}
+  0% {
+    width: 0;
+  }
   100% {
     width: ${width};
   }
 `
-
+export const arrowMove = keyframes `{
+  0% { 
+    opacity: 0;
+    top: 45%;
+  }
+  70% {
+      opacity: 1;
+  }
+  100% { 
+      opacity: 0;
+  }
+}`
 export const animatedCursor = keyframes`
   0% {border-right-color: rgb(50, 50, 49);}
   100% {border-right-color: transparent;}
@@ -104,6 +117,13 @@ export const slideUp = keyframes`
   }
 `
 
+export const slideUp2 = keyframes`
+  100% {
+    opacity: 0.50;
+    visibility: hidden;
+  }
+`
+
 export const shadowIn = keyframes`
   0% {
     box-shadow: inset 0 0 0 0 rgba(0, 0, 0, 0);
@@ -126,4 +146,20 @@ export const backgroundPan = keyframes`
   100% {
     background: rgb(238, 54, 52);
   }
+`
+
+export const fadeOut = keyframes`
+0% {
+  transform: translateZ(0) translateY(0);
+  opacity: 1;
+}
+60% {
+  opacity: 1;
+}
+100% {
+  filter: blur(40px);
+  letter-spacing: -1.2em;
+  transform: translateZ(-600px) translateY(-400px);
+  opacity: 0;
+}
 `
