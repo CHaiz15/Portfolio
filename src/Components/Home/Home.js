@@ -1,16 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import styled, { css } from 'styled-components'
-import { periodIn, shrink, enlarge, slideUp, slideIn} from '../../KeyFrames'
+import { periodIn, shrink, enlarge, slideUp, slideIn, slideUp2} from '../../KeyFrames'
 import { NavLink } from 'react-router-dom'
 import logo from '../../Assets/white-logo.png'
 import { useLocation } from 'react-router-dom'
 
-
 const Home = () => {
-  const location = useLocation();
+  const location = useLocation()
+  const [displayStatus, setDisplayStatus] = useState(false)
+  window.addEventListener('scroll', (e) => handleScroll(e), true)
+  const handleScroll = (e) => {
+    if(e.srcElement.scrollTop > 50) {
+      setDisplayStatus(true)
+    } else {
+      setDisplayStatus(false)
+    }
+  }
 
   return (
-    <Content>
+    <Content displayStatus={displayStatus}>
       <HomeSection currentLocation={location.pathname}>
         <OptionBox duration={5} currentLocation={location.pathname}>
           <Option>
@@ -50,6 +58,14 @@ const Home = () => {
   )
 }
 
+const Content = styled.main` 
+  display: flex;
+  ${props => props.displayStatus && css`animation: ${slideUp2} 0.1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;`}
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1;
+`
 const Logo = styled.img`
   height: 4rem;
   align-self: center;
@@ -67,19 +83,13 @@ const OptionBox = styled.div`
     css`animation: ${slideIn} ${props => props.duration + 's'} cubic-bezier(0.390, 0.575, 0.565, 1.000);`
   }
 `
-const Content = styled.main`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-`
 const HomeSection = styled.main`
   height: 100vh;
   width: 100vw;
   background-color: rgb(50, 50, 49);
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   animation: ${periodIn} 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   ${props => props.currentLocation !== '/home' &&
