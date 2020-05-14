@@ -23,7 +23,7 @@ const About = () => {
           <p style={{textAlign: 'center'}}>Thank you for stopping by and please enjoy what you see!</p>
         </Bio>
       </BioContainer>
-      <ImgContainer img={aboutSecond}/>
+      <ImgContainerTwo img={aboutSecond}/>
       <Footer />
     </ContentContainer>
   )
@@ -56,6 +56,12 @@ const Bio = styled.div`
   z-index: 3;
   transform: translate(-50%, -50%);
   box-shadow: none;
+  @media (max-width: 640px) {
+    font-size: 1.5em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.2em;
+  }
 `
 const BioContainer = styled.section`
   background-color: rgb(255, 255, 245);
@@ -92,6 +98,13 @@ const ImgContainer = styled.div`
     z-index: -2;
   }
 `
+const ImgContainerTwo = styled(ImgContainer)`
+  @media (max-width: 640px) {
+    background: url(${props => props.img}) right;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+`
 const Welcome = styled.div`
   height: 85%;
   width: 100%;
@@ -104,6 +117,12 @@ const NameWrapper = styled.div`
   color: rgb(255, 255, 245);
   font-weight: bolder;
   font-size: 6em;
+  @media (max-width: 640px) {
+    font-size: 4em;
+  }
+  @media (max-width: 400px) {
+    font-size: 2.5em;
+  }
 `
 const Name = styled.p`
   margin: 0;
@@ -112,6 +131,9 @@ const Arrow = styled.img`
   width: 2%;
   height: auto;
   padding: 0 0 1% 0;
+  @media (max-width: 640px) {
+    width: 4%;
+  }
 `
 
 export default About

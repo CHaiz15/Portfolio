@@ -72,12 +72,24 @@ const Welcome = styled.div`
   flex-direction: row;
   color: rgb(255, 255, 245);
   padding: 0 0 7% 0;
+  @media (max-width: 900px) {
+    padding: 0 0 15% 0;
+  }
+  @media (max-width: 600px) {
+    padding: 0 0 30% 0;
+  }
+  @media (max-height: 650px) {
+    padding: 20% 0 0 0;
+  }
 `
 const Greeting = styled.div`
   font-weight: bolder;
   font-size: 4em;
   width: 100%;
   height: auto;
+  @media (max-width: 400px) {
+    font-size: 3em;
+  }
 `
 const GreetingText = styled.p`
   margin: 0;
@@ -86,6 +98,9 @@ const Arrow = styled.img`
   width: 2%;
   height: auto;
   padding: 15% 0 1% 0;
+  @media (max-width: 640px) {
+    width: 4%;
+  }
 `
 
 export default Projects

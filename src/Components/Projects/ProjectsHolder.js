@@ -76,7 +76,7 @@ const ProjectsHolder = () => {
           </TitleWrapper>
           <Description>
             <TechTitle>Overview</TechTitle>
-              <Text>We were given two hours to find an api and come up with an idea to make an application using it. I stumbled upon the superhero api and decided to create a fun application designed to allow a user to create teams of superheros/villians and checkout what their combined stats would be!</Text>
+              <Text>I stumbled upon the superhero api and decided to create a fun application designed to allow a user to create teams of superheros/villians and checkout what their combined stats would be!</Text>
           </Description>
         </Project>
         <Details>
@@ -140,6 +140,18 @@ const Title = styled.h3`
   color: rgb(50, 50, 49);
   font-size: 7em;
   text-align: center;
+  @media (max-width: 850px) {
+    font-size: 6em;
+  }
+  @media (max-width: 640px) {
+    font-size: 4em;
+  }
+  @media (max-width: 500px) {
+    font-size: 3.5em;
+  }
+  @media (max-width: 420px) {
+    font-size: 2.5em;
+  }
 `
 
 const ImgWrapper = styled.div`
@@ -148,6 +160,10 @@ const ImgWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  @media (max-width: 850px) {
+    width: 100%;
+    height: 70%;
+  }
 `
 
 const Img = styled.img`
@@ -173,6 +189,9 @@ const ClickMe = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 640px) {
+    font-size: 3em;
+  }
 `
 
 const Details = styled.div`
@@ -186,7 +205,6 @@ const Details = styled.div`
 const TechStack = styled.div`
   width: 100%;
   height: 40%;
-  text-align: left;
   color: rgb(50, 50, 49);
   font-size: 1.5em;
 `
@@ -201,12 +219,22 @@ const TechTitle = styled.h3`
   color: rgb(50, 50, 49);
   font-size: 2em;
   font-weight: bolder;
+  @media (max-width: 850px) {
+    font-size: 25.2px;
+  }
+  @media (max-width: 640px) {
+    text-align: center;
+  }
 `
 
 const TechIcon = styled.img`
   width: 5%;
   height: auto;
   margin: 1%;
+  @media (max-width: 850px) {
+    width: 10%;
+    margin: 3%;
+  }
 `
 
 const Description = styled.div`
@@ -215,6 +243,15 @@ const Description = styled.div`
   text-align: left;
   color: rgb(50, 50, 49);
   font-size: 1.5em;
+  @media (max-width: 720px) {
+    font-size: 1.2em;
+  }
+  @media (max-width: 640px) {
+    text-align: center;
+  }
+  @media (max-width: 420px) {
+    font-size: 1em;
+  }
 `
 
 const Text = styled.div`
@@ -222,12 +259,18 @@ const Text = styled.div`
   align-items: center;
   width: 90%;
   text-align: left;  
-  vertical-align: center;
   font-weight: 500;
+  @media (max-width: 640px) {
+    text-align: center;
+    width: 100%;
+  }
 `
 
 const Tech = styled(Text)`
   font-weight: bolder;
+  @media (max-width: 640px) {
+    justify-content: center;
+  }
 `
 
 export default ProjectsHolder

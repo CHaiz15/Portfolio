@@ -76,6 +76,9 @@ const Logo = styled.img`
     cursor: pointer;
     box-shadow: 0px 0px 32px 2px rgba(255,255,245,0);
   }
+  @media (max-width: 640px) {
+    height: 3rem;
+  }
 `
 const OptionBox = styled.div`
   height: auto;
@@ -110,7 +113,10 @@ const StyledLogoLink = styled(NavLink)`
   css`
     font-size: 1.2em;
   `
-}
+  }
+  @media (max-width: 440px) {
+    font-size: 0.7em;
+  }
 `
 const Option = styled.h1`
   margin: 0;
