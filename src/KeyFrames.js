@@ -5,13 +5,13 @@ export const enlarge = keyframes`
     transform: scale(1);
   }
   100% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 `
 
 export const shrink = keyframes`
   0% {
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
   100% {
     transform: scale(1);
@@ -66,7 +66,6 @@ export const periodExit = keyframes`
     opacity: 0;
   }
 `
-
 export const periodIn = keyframes`
   0% {
     transform: translateY(-600px) rotateX(-30deg) scale(3);
@@ -79,7 +78,6 @@ export const periodIn = keyframes`
     opacity: 1;
   }
 `
-
 export const sonarEffect = keyframes`
 	0% {
 		opacity: 0.5;
@@ -95,6 +93,35 @@ export const sonarEffect = keyframes`
 	}
 `
 
+export const slideRight = keyframes`
+0% {
+  transform: translateX(1000px) scaleX(2.5) scaleY(0.2);
+  transform-origin: 0% 50%;
+  filter: blur(40px);
+  opacity: 0;
+}
+100% {
+  transform: translateX(0) scaleY(1) scaleX(1);
+  transform-origin: 50% 50%;
+  filter: blur(0);
+  opacity: 1;
+}
+`
+
+export const slideLeft = keyframes`
+  0% {
+    transform: translateX(-1000px) scaleX(2.5) scaleY(0.2);
+    transform-origin: 100% 50%;
+    filter: blur(40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0) scaleY(1) scaleX(1);
+    transform-origin: 50% 50%;
+    filter: blur(0);
+    opacity: 1;
+  }
+`
 export const slideIn = keyframes`
   0% {
     transform: translateY(-1000px) scaleY(2.5) scaleX(0.2);
@@ -109,10 +136,9 @@ export const slideIn = keyframes`
     opacity: 1;
   }
 `
-
 export const slideUp = keyframes`
   100% {
-    height: 10vh;
+    height: 9vh;
     align-items: null;
   }
 `
