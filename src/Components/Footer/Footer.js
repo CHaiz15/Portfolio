@@ -48,11 +48,13 @@ const Icon = styled.img`
   height: 80%;
   width: auto;
   animation: ${shrink} 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-  // -webkit-box-reflect: below 5px -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.1)));
   &:hover {
     animation: ${enlarge} 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     cursor: pointer;
     // -webkit-box-reflect: below 5px -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.1)));
+  }
+  @media (max-width: 640px) {
+    margin: 10%;
   }
 `
 const Info = styled.div`

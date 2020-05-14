@@ -67,8 +67,12 @@ const WelcomeButton = styled.div`
     box-shadow: 0px 0px 32px 2px rgba(255,255,245,0);
     animation: ${sonarEffect} 1.3s ease-out 75ms;
   }
+  @media (max-width: 640px) {
+    height: 25rem;  
+    width: 25rem;
+  }
 `
-const Content = styled.main `
+const Content = styled.main`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -86,13 +90,16 @@ const Name = styled.h1`
   border-right: solid 3px rgba(0,255,0,.75);
   white-space: nowrap;
   overflow: hidden;    
-  font-size:8em;
+  font-size: 8em;
   color: rgb(50, 50, 49);
   animation: ${animatedText('100%')} 2s steps(29,end) 1 normal both,
             ${animatedCursor} 400ms steps(29,end) infinite,
             ${fadeOut} 0.8s cubic-bezier(0.550, 0.085, 0.680, 0.530) 3s both;
   ${props => !props.displayStatus && 'display: none;'}
   ${props => props.cursorStatus && 'border-right: hidden;'}
+  @media (max-width: 640px) {
+    font-size: 5em;
+  }
 `
 const NameBox = styled.div`
 `

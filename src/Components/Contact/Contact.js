@@ -12,6 +12,7 @@ const Contact = () => {
 }
 
 const ContentContainer = styled.main`
+  text-align: center;
   background-color: rgb(50, 50, 49);
   flex-direction: column;
   height: 100vh;
@@ -21,6 +22,12 @@ const ContentContainer = styled.main`
   align-items: center;
   font-size: 3em;
   color: rgb(255,255,245);
+  @media (max-width: 640px) {
+    font-size: 2em;
+  }
+  @media (max-width: 400px) {
+    font-size: 1.5em;
+  }
 `
 
 export default Contact
