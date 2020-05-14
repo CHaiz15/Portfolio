@@ -32,7 +32,7 @@ const WelcomeContainer = styled(Link)`
 
 const Welcome = styled.h1`  
   color: rgb(255, 255, 245);
-  font-size: 3em;
+  font-size: 4em;
   font-weight: bold;
 `
 
@@ -41,8 +41,8 @@ const WelcomeButton = styled.div`
   ${props => props.displayStatus && 'display: none;'}
   align-items: center;
   justify-content: center;
-  height: 25rem;  
-  width: 25rem;
+  height: 40rem;  
+  width: 40rem;
   cursor: pointer;
   border-radius: 50%;
   background: rgb(50, 50, 49);
@@ -86,7 +86,7 @@ const Name = styled.h1`
   border-right: solid 3px rgba(0,255,0,.75);
   white-space: nowrap;
   overflow: hidden;    
-  font-size: 7em;
+  font-size:8em;
   color: rgb(50, 50, 49);
   animation: ${animatedText('100%')} 2s steps(29,end) 1 normal both,
             ${animatedCursor} 400ms steps(29,end) infinite,
