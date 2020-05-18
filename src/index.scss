@@ -1,14 +1,8 @@
-$primary-red: rgb(238, 54, 52);
-$primary-blue: rgb(70, 170, 239);
-$primary-yellow: rgb(252, 231, 0);
-$main-white: rgb(255, 255, 245);
-$main-black: rgb(50, 50, 49);
-
 body {
   height: 100%;
   width: 100%;
   font-size: 12px;
-  background-color: $main-white;
+  background-color: rgb(255, 255, 245);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
