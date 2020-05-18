@@ -6,10 +6,10 @@ import linkedin from '../../Assets/Linkedin.png'
 import github from '../../Assets/Github.png'
 
 const Footer = () => {
-  return(
+  return (
     <Content>
       <ThankYou>
-        <p>Thank You for Visiting!</p>
+        <p>Thank you for visiting, let's connect!</p>
       </ThankYou>
       <IconContainer>
         <Icon src={linkedin} onClick={() => window.open("https://www.linkedin.com/in/caleb-haizlett/", "_blank")}/>
@@ -51,10 +51,12 @@ const Icon = styled.img`
   &:hover {
     animation: ${enlarge} 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     cursor: pointer;
-    // -webkit-box-reflect: below 5px -webkit-gradient(linear, right top, right bottom, from(transparent), color-stop(40%, transparent), to(rgba(255, 255, 255, 0.1)));
   }
-  @media (max-width: 640px) {
+  @media (max-width: 950px) {
     margin: 10%;
+  }
+  @media (max-width: 440px) {
+    width: 40%;
   }
 `
 const Info = styled.div`
