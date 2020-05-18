@@ -13,7 +13,7 @@ const Projects = () => {
         <Overview>
           <Welcome>
             <Greeting>
-              <GreetingText>Projects</GreetingText>
+              <GreetingText>My code is...</GreetingText>
             </Greeting>
           </Welcome>
           <Goals/>
@@ -71,7 +71,7 @@ const Welcome = styled.div`
   justify-content: center;
   flex-direction: row;
   color: rgb(255, 255, 245);
-  padding: 0 0 7% 0;
+  padding: 0 0 5% 0;
   @media (max-width: 900px) {
     padding: 0 0 15% 0;
   }
