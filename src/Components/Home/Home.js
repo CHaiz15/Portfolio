@@ -129,7 +129,7 @@ const Option = styled.h1`
 const StyledLink = styled(StyledLogoLink)`
   &:hover {
     color: rgb(255,255,245);
-    border-bottom: 1px solid rgb(255, 255, 245);
+    border-bottom: 0 0 1px solid rgb(255, 255, 245);
   }
 `
 
