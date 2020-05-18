@@ -13,14 +13,14 @@ const About = () => {
             <NameWrapper>
               <Name>Caleb Haizlett</Name>
             </NameWrapper>
-            <Arrow src={arrow}/>
           </Welcome>
+            <Arrow src={arrow}/>
         </ImgContainer>
       <BioContainer>
         <Bio>
           <p><strong>I am</strong> a software developer currently residing in Denver, Colorado. Following a childhood love for video games and technology; I dove into the world of software development. I fiddled around on various online courses, took a year of computer science at Slippery Rock University, and then honed my skills at Turing School of Software and Design.</p>
-          <p>I have done work in software development, mobile app creation, graphic design, and front-end web development. I am drawn toward flawless design, that encompasses more than just the appearence. It is a multi-step process that includes market research, technical research, design of a concept, and well thought mockups.</p>
-          <p style={{textAlign: 'center'}}>Thank you for stopping by and please enjoy what you see!</p>
+          <p>I have done work in software development, mobile app creation, graphic design, and front-end web development. I am drawn toward flawless design, that encompasses more than just the appearance. A quality product comes from a multi-step process that includes market research, technical research, design of a concept, well thought mockups, and detailed execution.</p>
+          <p>In my time away from the screen I enjoy hockey, hiking, climbing, hammocking, and trail running in the beautiful state of Colorado. I'm always looking for my next adventure or new place to eat. Thank you for stopping by and if you like anything you see lets connect!</p>
         </Bio>
       </BioContainer>
       <ImgContainerTwo img={aboutSecond}/>
@@ -42,6 +42,7 @@ const ContentContainer = styled.main`
   perspective: 1px;
   transform-style: preserve-3d;
 `
+
 const Bio = styled.div`
   align-self: center;
   width: 70%;
@@ -63,6 +64,7 @@ const Bio = styled.div`
     font-size: 1.2em;
   }
 `
+
 const BioContainer = styled.section`
   background-color: rgb(255, 255, 245);
   flex-direction: column;
@@ -76,12 +78,15 @@ const BioContainer = styled.section`
   box-shadow: 0 0 20px rgb(50, 50, 49);
   z-index: 1;
 `
+
 const ImgContainer = styled.div`
+  object-fit: cover;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  flex-direction: column;
   align-items: flex-end;
   position: relative;
-  min-height: 100vh;
+  min-height: 100%;
   width: 100%;
   transform-style: inherit;
   z-index: -1;
@@ -90,14 +95,14 @@ const ImgContainer = styled.div`
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     display: block;
-    background: url(${props => props.img}) center;
-    background-size: cover;
+    background: url(${props => props.img}) center / cover;
     background-repeat: no-repeat;
     transform: translateZ(-1px) scale(2);
-    height: 100vh;
+    height: 100%;
     z-index: -2;
   }
 `
+
 const ImgContainerTwo = styled(ImgContainer)`
   @media (max-width: 640px) {
     background: url(${props => props.img}) right;
@@ -105,14 +110,23 @@ const ImgContainerTwo = styled(ImgContainer)`
     background-repeat: no-repeat;
   }
 `
+
 const Welcome = styled.div`
-  height: 85%;
+  height: 100%;
   width: 100%;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
+  padding: 5% 0 0 0;
+  @media (max-width: 440px) {
+    height: 45%;
+  }
+  @media (max-width: 640px) {
+    padding: 10% 0 0 0;
+  }
 `
+
 const NameWrapper = styled.div`
   color: rgb(255, 255, 245);
   font-weight: bolder;
@@ -124,10 +138,12 @@ const NameWrapper = styled.div`
     font-size: 2.5em;
   }
 `
+
 const Name = styled.p`
-  margin: 0;
 `
+
 const Arrow = styled.img`
+align-self: center;
   width: 2%;
   height: auto;
   padding: 0 0 1% 0;

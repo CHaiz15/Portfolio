@@ -58,6 +58,12 @@ const Content = styled.div`
   @media (max-width: 800px) {
     width: 100%;
   }
+  @media (max-width: 640px) {
+    padding: 0 0 5% 0;
+  }
+  @media (max-width: 420px) {
+    padding: 0 0 30% 0;
+  }
 `
 
 const IconContainer = styled.div`
@@ -88,7 +94,7 @@ const GoalWrapper = styled.div`
     height: 7.5rem;
     width: 7.5rem;
   }
-  @media (max-width: 420px) {
+  @media (max-width: 460px) {
     height: 6rem;
     width: 6rem;
   }
@@ -109,7 +115,7 @@ const GoalTitle = styled.h3`
   @media (max-width: 640px) {
     font-size: 1.5em;
   }
-  @media (max-width: 420px) {
+  @media (max-width: 460px) {
     font-size: 1.2em;
   }
   @media (max-width: 320px) {
@@ -129,7 +135,7 @@ const Description = styled.div`
   @media (max-width: 840px) {
     font-size: 1.3em;
   }
-  @media (max-width: 420px) {
+  @media (max-width: 460px) {
     font-size: 1em;
   }
   @media (max-width: 320px) {
